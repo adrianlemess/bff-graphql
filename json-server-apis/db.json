@@ -1,0 +1,44 @@
+{
+    "users": [
+      {
+        "id": "23",
+        "firstName": "Barbara",
+        "lastName": "Becker",
+        "age": 20,
+        "companyId": "1"
+      },
+      {
+        "id": "40",
+        "firstName": "Alex",
+        "lastName": "dos Santos",
+        "age": 40,
+        "companyId": "2"
+      },
+      {
+        "id": "41",
+        "firstName": "Nick",
+        "lastName": "Fury",
+        "age": 25,
+        "companyId": "2"
+      },
+      {
+        "firstName": "Diego",
+        "lastName": "Pacheco",
+        "age": 34,
+        "id": "9GeT7Zw",
+        "companyId": "1"
+      }
+    ],
+    "companies": [
+      {
+        "id": "1",
+        "name": "Apple",
+        "description": "Iphone factory"
+      },
+      {
+        "id": "2",
+        "name": "Google",
+        "description": "Search things"
+      }
+    ]
+  }
