@@ -14,7 +14,7 @@ export class Routes {
         app.all('/api/*', this.proxyController.getProxyAPI)
 
         app.route('/health')
-        .get((req: Request, res: Response) => {            
+        .get((req: Request, res: Response) => {         
             res.status(200).send({
                 status: 'up'
             })

@@ -8,6 +8,7 @@ const {
     GraphQLSchema,
     GraphQLNonNull
 } = graphql;
+const APIS_DOMAIN = process.env.APIS_DOMAIN;
 
 const CompanyType = new GraphQLObjectType({
     name: 'Company',
@@ -24,7 +25,7 @@ const CompanyType = new GraphQLObjectType({
         users: {
             type: new GraphQLList(UserType),
             resolve(parentValue) {
-                return axios.get(`http://localhost:3000/companies/${parentValue.id}/users`)
+                return axios.get(`${APIS_DOMAIN}/companies/${parentValue.id}/users`)
                     .then(response => response.data)
             }
         }
@@ -46,7 +47,7 @@ const UserType = new GraphQLObjectType({
         company: {
             type: CompanyType,
             resolve(parentValue, args) {
-                return axios.get(`http://localhost:3000/companies/${parentValue.companyId}`)
+                return axios.get(`${APIS_DOMAIN}/companies/${parentValue.companyId}`)
                     .then(response => response.data)
             }
         }
@@ -64,7 +65,7 @@ const mutation = new GraphQLObjectType({
                 companyId: { type: GraphQLString }
             },
             resolve(parentValue, { firstName, age }) {
-                return axios.post('http://localhost:3000/users', { firstName, age })
+                return axios.post(`${APIS_DOMAIN}/users`, { firstName, age })
                     .then(response => response.data)
             }
         },
@@ -74,7 +75,7 @@ const mutation = new GraphQLObjectType({
                 id: { type: new GraphQLNonNull(GraphQLString) }
             },
             resolve(parentValue, args) {
-                return axios.delete(`http://localhost:3000/users/${args.id}`)
+                return axios.delete(`${APIS_DOMAIN}/users/${args.id}`)
                     .then(response => response.data)
             }
         },
@@ -87,7 +88,7 @@ const mutation = new GraphQLObjectType({
                 companyId: { type: GraphQLString }
             },
             resolve(parentValue, args) {
-                return axios.patch(`http://localhost:3000/users/${args.id}`, args)
+                return axios.patch(`${APIS_DOMAIN}/users/${args.id}`, args)
                     .then(response => response.data)
             }
         }
@@ -105,14 +106,14 @@ const RootQuery = new GraphQLObjectType({
                 }
             },
             resolve(parentValue, args) {
-                return axios.get(`http://localhost:3000/users/${args.id}`)
+                return axios.get(`${APIS_DOMAIN}/users/${args.id}`)
                     .then(response => response.data)
             }
         },
         users: {
             type: new GraphQLList(UserType),
             resolve(parentValue, args) {
-                return axios.get(`http://localhost:3000/users`)
+                return axios.get(`${APIS_DOMAIN}/users`)
                     .then(response => response.data)
             }
         },
@@ -126,7 +127,7 @@ const RootQuery = new GraphQLObjectType({
             resolve(parentValue, args) {
                 console.log(args)
                 if (args.id) {
-                    return axios.get(`http://localhost:3000/companies/${args.id}`)
+                    return axios.get(`${APIS_DOMAIN}/companies/${args.id}`)
                         .then(response => response.data)
                 }
             }

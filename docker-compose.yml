@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+  bff:
+    build:
+      context: ./bff
+      args:
+        - env=${env}
+        - PORT=3000
+        - IP_ALLOW_ORIGIN=*
+        - PROXY_API_URL=http://api-url:5000
+        - PROXY_GRAPHQL_URL=http://graphql:5000
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+    links: 
+      - graphql
+      - api-url
+  graphql:
+    build:
+      context: ./graphql-project
+      args:
+        - PORT=5000
+        - env=${env}
+        - APIS_DOMAIN=http://api-url:5000
+    links: 
+      - api-url
+  api-url:
+    build:
+      context: ./json-server-apis
+      args:
+        - PORT=5000
+  
