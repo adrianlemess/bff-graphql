@@ -1,4 +1,4 @@
-# Projeto Ilegra
+# BFF e GraphQL
 
 Este projeto é uma POC para fins de estudos onde foi desenvolvido uma arquitetura utilizando conceitos de BFF
 
@@ -7,16 +7,13 @@ Este projeto é uma POC para fins de estudos onde foi desenvolvido uma arquitetu
   - [Introdução](#introdu%C3%A7%C3%A3o)
     - [Principais recursos utilizados](#principais-recursos-utilizados)
     - [Pré-requisitos](#pr%C3%A9-requisitos)
-    - [Instalação em desenvolvimento sem Docker](#instala%C3%A7%C3%A3o-em-desenvolvimento-sem-docker)
-    - [Instalação do Ambiente com Docker](#instala%C3%A7%C3%A3o-do-ambiente-com-docker)
+    - [Instalação](#instala%C3%A7%C3%A3o)
   - [Testes Unitários](#testes-unit%C3%A1rios)
-  - [Produção](#produ%C3%A7%C3%A3o)
-  - [Uso do GitLab](#uso-do-gitlab)
-  - [Considerações](#considera%C3%A7%C3%B5es)
-  - [Possíveis melhorias](#poss%C3%ADveis-melhorias)
+  - [Recursos do BFF](#recursos-do-bff)
+  - [Conceitos](#conceitos)
   - [Autor](#autor)
   - [License](#license)
-
+  
 ## Introdução
 
 Nessa seção é descrito as dependências utilizadas na aplicação como um todo, instruções de como iniciar o projeto em modo de desenvolvimento e realização de testes.
@@ -98,6 +95,3 @@ npm run test
 ## License
 
 Esta POC possui Licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para saber mais detalhes.
-
-[coverage_master]: https://gitlab.com/adrianlemess/starwars-project/badges/master/coverage.svg "CoverageMaster"
-[status_master]: https://gitlab.com/adrianlemess/starwars-project/badges/master/pipeline.svg "StatusMaster"
