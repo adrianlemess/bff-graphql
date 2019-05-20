@@ -5,7 +5,7 @@ Este projeto é uma POC para fins de estudos onde foi desenvolvido uma arquitetu
 ## Sumário
 
   - [Introdução](#introdu%C3%A7%C3%A3o)
-    - [Principais recursos utilizados](#principais-recursos-utilizados)
+      - [Principais recursos utilizados](#principais-recursos-utilizados)
     - [Pré-requisitos](#pr%C3%A9-requisitos)
     - [Instalação](#instala%C3%A7%C3%A3o)
   - [Testes Unitários](#testes-unit%C3%A1rios)
