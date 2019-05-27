@@ -6,11 +6,11 @@ const config = {
 	all: {
 		env: process.env.NODE_ENV || 'dev',
 		port: process.env.PORT || 4500,
-        proxyTimeout: 10000,
-        timeExpireHelmet: 15778476000,
-        ipAllowOrigin: process.env.IP_ALLOW_ORIGIN || '*',
-        proxyApiUrl: process.env.PROXY_API_URL || 'http://localhost:3000',
-        proxyGraphQLUrl: process.env.PROXY_GRAPHQL_URL || 'http://localhost:5000'
+		proxyTimeout: 10000,
+		timeExpireHelmet: 15778476000,
+		ipAllowOrigin: process.env.IP_ALLOW_ORIGIN || '*',
+		proxyApiUrl: process.env.PROXY_API_URL || 'http://localhost:3000',
+		proxyGraphQLUrl: process.env.PROXY_GRAPHQL_URL || 'http://localhost:5000'
 	},
 	dev: {
 		isDebug: true
